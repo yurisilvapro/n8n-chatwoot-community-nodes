@@ -1,0 +1,63 @@
+{
+  "name": "n8n-nodes-chatwoot-complete",
+  "version": "0.1.0",
+  "description": "Complete Chatwoot integration for n8n - Application, Client and Platform APIs",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "chatwoot",
+    "customer-support",
+    "chat",
+    "messaging",
+    "helpdesk"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yurisilva/chatwoot-community-nodes",
+  "author": {
+    "name": "Yuri Silva",
+    "email": "yuri@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurisilva/chatwoot-community-nodes.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier --write \"**/*.{js,json,ts,md}\"",
+    "lint": "eslint . --ext .ts",
+    "lintfix": "eslint . --ext .ts --fix",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ChatwootApi.credentials.js",
+      "dist/credentials/ChatwootClientApi.credentials.js",
+      "dist/credentials/ChatwootPlatformApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Chatwoot/Chatwoot.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.2.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

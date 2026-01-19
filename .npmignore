@@ -1,0 +1,46 @@
+# Source files
+nodes/**/*.ts
+!nodes/**/*.js
+
+credentials/**/*.ts
+!credentials/**/*.js
+
+# Config files
+tsconfig.json
+.eslintrc.js
+.prettierrc
+gulpfile.js
+
+# Development
+*.spec.ts
+*.test.ts
+__tests__/
+test/
+
+# Documentation (keep in npm for users)
+# docs/
+# examples/
+PLANEJAMENTO.md
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# Build
+*.tsbuildinfo

@@ -1,0 +1,199 @@
+{
+  "name": "Chatwoot Application API - Examples",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "When clicking 'Test workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "apiType": "application",
+        "resource": "contact",
+        "operation": "getAll",
+        "returnAll": false,
+        "limit": 10,
+        "options": {
+          "sort": "name"
+        }
+      },
+      "name": "Get Contacts",
+      "type": "n8n-nodes-chatwoot-complete.chatwoot",
+      "typeVersion": 1,
+      "position": [450, 200],
+      "credentials": {
+        "chatwootApi": {
+          "id": "1",
+          "name": "Chatwoot Application API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "apiType": "application",
+        "resource": "contact",
+        "operation": "create",
+        "inboxId": 1,
+        "additionalFields": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "phone_number": "+5511999999999"
+        }
+      },
+      "name": "Create Contact",
+      "type": "n8n-nodes-chatwoot-complete.chatwoot",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "credentials": {
+        "chatwootApi": {
+          "id": "1",
+          "name": "Chatwoot Application API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "apiType": "application",
+        "resource": "conversation",
+        "operation": "create",
+        "contactId": "={{$json.id}}",
+        "inboxId": 1,
+        "additionalFields": {
+          "status": "open",
+          "message": "Hello! This is an automated message."
+        }
+      },
+      "name": "Create Conversation",
+      "type": "n8n-nodes-chatwoot-complete.chatwoot",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "credentials": {
+        "chatwootApi": {
+          "id": "1",
+          "name": "Chatwoot Application API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "apiType": "application",
+        "resource": "message",
+        "operation": "create",
+        "conversationId": "={{$json.id}}",
+        "content": "This is a follow-up message from n8n automation!",
+        "messageType": "outgoing",
+        "additionalFields": {
+          "private": false
+        }
+      },
+      "name": "Send Message",
+      "type": "n8n-nodes-chatwoot-complete.chatwoot",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "credentials": {
+        "chatwootApi": {
+          "id": "1",
+          "name": "Chatwoot Application API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "apiType": "application",
+        "resource": "webhook",
+        "operation": "create",
+        "url": "https://your-n8n-instance.com/webhook/chatwoot",
+        "additionalFields": {
+          "subscriptions": [
+            "conversation_created",
+            "message_created",
+            "conversation_resolved"
+          ]
+        }
+      },
+      "name": "Create Webhook",
+      "type": "n8n-nodes-chatwoot-complete.chatwoot",
+      "typeVersion": 1,
+      "position": [450, 400],
+      "credentials": {
+        "chatwootApi": {
+          "id": "1",
+          "name": "Chatwoot Application API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "apiType": "application",
+        "resource": "report",
+        "operation": "getAccountSummary",
+        "metric": "conversations_count",
+        "type": "account",
+        "since": "2026-01-01",
+        "until": "2026-01-31"
+      },
+      "name": "Get Reports",
+      "type": "n8n-nodes-chatwoot-complete.chatwoot",
+      "typeVersion": 1,
+      "position": [450, 500],
+      "credentials": {
+        "chatwootApi": {
+          "id": "1",
+          "name": "Chatwoot Application API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking 'Test workflow'": {
+      "main": [
+        [
+          {
+            "node": "Get Contacts",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Contact",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Webhook",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Reports",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Contact": {
+      "main": [
+        [
+          {
+            "node": "Create Conversation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Conversation": {
+      "main": [
+        [
+          {
+            "node": "Send Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

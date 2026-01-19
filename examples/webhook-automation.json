@@ -1,0 +1,174 @@
+{
+  "name": "Chatwoot Webhook Automation - Auto Reply",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "chatwoot",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "your-webhook-id"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.event}}",
+              "operation": "equals",
+              "value2": "message_created"
+            },
+            {
+              "value1": "={{$json.message_type}}",
+              "operation": "equals",
+              "value2": "incoming"
+            }
+          ]
+        }
+      },
+      "name": "Is Incoming Message?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "apiType": "application",
+        "resource": "contact",
+        "operation": "get",
+        "contactId": "={{$json.sender.id}}"
+      },
+      "name": "Get Contact Info",
+      "type": "n8n-nodes-chatwoot-complete.chatwoot",
+      "typeVersion": 1,
+      "position": [650, 250],
+      "credentials": {
+        "chatwootApi": {
+          "id": "1",
+          "name": "Chatwoot Application API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate auto-reply based on message content\nconst message = $input.item.json.content.toLowerCase();\nlet reply = '';\n\nif (message.includes('hello') || message.includes('hi')) {\n  reply = 'Hello! How can I help you today?';\n} else if (message.includes('price') || message.includes('cost')) {\n  reply = 'Our pricing starts at $99/month. Would you like to learn more?';\n} else if (message.includes('support') || message.includes('help')) {\n  reply = 'I\\'m here to help! Please describe your issue and I\\'ll assist you.';\n} else {\n  reply = 'Thank you for your message. An agent will respond shortly.';\n}\n\nreturn {\n  conversationId: $input.item.json.conversation.id,\n  reply: reply,\n  contactName: $input.item.json.sender.name\n};"
+      },
+      "name": "Generate Reply",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 250]
+    },
+    {
+      "parameters": {
+        "apiType": "application",
+        "resource": "message",
+        "operation": "create",
+        "conversationId": "={{$json.conversationId}}",
+        "content": "={{$json.reply}}",
+        "messageType": "outgoing",
+        "additionalFields": {
+          "private": false
+        }
+      },
+      "name": "Send Auto Reply",
+      "type": "n8n-nodes-chatwoot-complete.chatwoot",
+      "typeVersion": 1,
+      "position": [1050, 250],
+      "credentials": {
+        "chatwootApi": {
+          "id": "1",
+          "name": "Chatwoot Application API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\": \"success\", \"message\": \"Auto-reply sent\"}"
+      },
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1250, 250]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\": \"ignored\", \"reason\": \"Not an incoming message\"}"
+      },
+      "name": "Respond - Ignored",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [650, 400]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Is Incoming Message?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Incoming Message?": {
+      "main": [
+        [
+          {
+            "node": "Get Contact Info",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Ignored",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Contact Info": {
+      "main": [
+        [
+          {
+            "node": "Generate Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Reply": {
+      "main": [
+        [
+          {
+            "node": "Send Auto Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Auto Reply": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
