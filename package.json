@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-chatwoot-complete",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Complete Chatwoot integration for n8n - Application, Client and Platform APIs",
   "keywords": [
     "n8n-community-node-package",
