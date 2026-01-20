@@ -7,16 +7,16 @@ import {
 
 export class ChatwootClientApi implements ICredentialType {
 	name = 'chatwootClientApi';
-	displayName = 'Chatwoot Client API';
-	documentationUrl = 'https://developers.chatwoot.com/api-reference/introduction';
+	displayName = 'Fale Já Client API';
+	documentationUrl = 'https://faleja.com.br';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'Base URL',
 			name: 'baseUrl',
 			type: 'string',
-			default: 'https://app.chatwoot.com',
-			placeholder: 'https://app.chatwoot.com',
-			description: 'The base URL of your Chatwoot instance',
+			default: 'https://app.faleja.com.br',
+			placeholder: 'https://app.faleja.com.br',
+			description: 'A URL base da sua instância Fale Já',
 			required: true,
 		},
 		{
@@ -24,8 +24,8 @@ export class ChatwootClientApi implements ICredentialType {
 			name: 'inboxIdentifier',
 			type: 'string',
 			default: '',
-			placeholder: 'your-inbox-identifier',
-			description: 'Inbox identifier from Settings → Inboxes → API Inbox → Configuration',
+			placeholder: 'identificador-da-caixa-de-entrada',
+			description: 'Identificador da caixa de entrada em Configurações → Caixas de Entrada → API Inbox → Configuração',
 			required: true,
 		},
 		{
@@ -33,8 +33,8 @@ export class ChatwootClientApi implements ICredentialType {
 			name: 'contactIdentifier',
 			type: 'string',
 			default: '',
-			placeholder: 'contact-identifier',
-			description: 'Contact identifier obtained when creating a contact via Client API',
+			placeholder: 'identificador-do-contato',
+			description: 'Identificador do contato obtido ao criar um contato via Client API',
 			required: true,
 		},
 	];
@@ -51,8 +51,11 @@ export class ChatwootClientApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: '={{$credentials.baseUrl}}',
-			url: '/public/api/v1/inboxes/={{$credentials.inboxIdentifier}}/contacts/={{$credentials.contactIdentifier}}',
+			url: '=/public/api/v1/inboxes/{{$credentials.inboxIdentifier}}/contacts/{{$credentials.contactIdentifier}}',
 			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
 		},
 	};
 }

@@ -18,7 +18,7 @@ export const accountOperations: INodePropertyOptions[] = [
 			{
 				name: 'Get',
 				value: 'get',
-				description: 'Get account details',
+				description: 'Get detailed information about the account including name, status, features and limits',
 				action: 'Get account details',
 			},
 		],

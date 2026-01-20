@@ -1,11 +1,11 @@
-# Planejamento - n8n Community Nodes para Chatwoot
+# Planejamento - n8n Community Nodes para Fale Já
 
 ## Dados do Projeto
 
 - **Desenvolvedor**: Yuri Silva
-- **Projeto**: chatwoot-community-nodes-yurisilva_pro
-- **Objetivo**: Criar community nodes completos para n8n integrando todas as APIs do Chatwoot
-- **Fonte de Informações**: [Documentação Oficial Chatwoot API](https://developers.chatwoot.com/api-reference/introduction)
+- **Projeto**: faleja-community-nodes-yurisilva_pro
+- **Objetivo**: Criar community nodes completos para n8n integrando todas as APIs do Fale Já
+- **Fonte de Informações**: [Documentação Oficial Fale Já API](https://developers.faleja.com/api-reference/introduction)
 - **Data de Início**: Janeiro 2026
 
 ---
@@ -13,16 +13,16 @@
 ## 1. Visão Geral
 
 ### 1.1 Objetivo
-Desenvolver um pacote de **community nodes para n8n** que cubra **completamente** as três categorias de APIs do Chatwoot:
+Desenvolver um pacote de **community nodes para n8n** que cubra **completamente** as três categorias de APIs do Fale Já:
 - **Application APIs**: Automação e operações de agente/admin
 - **Client APIs**: Interfaces customizadas para usuários finais
 - **Platform APIs**: Gerenciamento administrativo em instâncias self-hosted
 
 ### 1.2 Diferencial
-Este projeto será **mais completo e atualizado** que os existentes (sufficit/n8n-nodes-chatwoot e pixelinfinito/n8n-nodes-chatwoot), seguindo **rigorosamente** a ordem e estrutura da documentação oficial.
+Este projeto será **mais completo e atualizado** que os existentes (sufficit/n8n-nodes-faleja e pixelinfinito/n8n-nodes-faleja), seguindo **rigorosamente** a ordem e estrutura da documentação oficial.
 
 ### 1.3 Ambiente
-- Instância própria do Chatwoot (self-hosted)
+- Instância própria do Fale Já (self-hosted)
 - Instância própria do n8n
 - Testes reais em ambiente controlado
 
@@ -88,7 +88,7 @@ APIs para gerenciamento em escala (apenas self-hosted). Requer `access_token` de
 ### 3.2 Estrutura de Diretórios
 
 ```
-chatwoot-community-nodes-yurisilva_pro/
+faleja-community-nodes-yurisilva_pro/
 │
 ├── package.json                          # Configuração npm
 ├── tsconfig.json                         # Configuração TypeScript
@@ -96,13 +96,13 @@ chatwoot-community-nodes-yurisilva_pro/
 ├── .gitignore                            # Arquivos ignorados
 │
 ├── credentials/
-│   ├── ChatwootApi.credentials.ts        # Application API
-│   ├── ChatwootClientApi.credentials.ts  # Client API
-│   └── ChatwootPlatformApi.credentials.ts # Platform API
+│   ├── Fale JáApi.credentials.ts        # Application API
+│   ├── Fale JáClientApi.credentials.ts  # Client API
+│   └── Fale JáPlatformApi.credentials.ts # Platform API
 │
 ├── nodes/
-│   └── Chatwoot/
-│       ├── Chatwoot.node.ts              # Node principal
+│   └── Fale Já/
+│       ├── Fale Já.node.ts              # Node principal
 │       ├── GenericFunctions.ts           # Funções auxiliares
 │       │
 │       ├── ApplicationApi/               # Application APIs
@@ -174,7 +174,7 @@ chatwoot-community-nodes-yurisilva_pro/
 #### Application API Credentials:
 ```typescript
 {
-  baseUrl: string;      // Ex: https://app.chatwoot.com
+  baseUrl: string;      // Ex: https://app.faleja.com
   accessToken: string;  // Token de Profile Settings
   accountId: number;    // ID da conta
 }
@@ -300,8 +300,8 @@ chatwoot-community-nodes-yurisilva_pro/
 ### 5.5 Compatibilidade
 - ✅ n8n >= 0.200.0
 - ✅ Node.js >= 18
-- ✅ Chatwoot Cloud e Self-hosted
-- ✅ Todas as versões recentes do Chatwoot
+- ✅ Fale Já Cloud e Self-hosted
+- ✅ Todas as versões recentes do Fale Já
 
 ---
 
@@ -325,7 +325,7 @@ Requisitos para community node verified:
 ## 7. Estratégia de Testes
 
 ### 7.1 Ambiente de Teste
-- Instância Chatwoot self-hosted própria
+- Instância Fale Já self-hosted própria
 - Instância n8n própria
 - Dados de teste isolados
 
@@ -353,15 +353,15 @@ Requisitos para community node verified:
 
 | Risco | Probabilidade | Impacto | Mitigação |
 |-------|---------------|---------|-----------|
-| API Chatwoot muda sem aviso | Média | Alto | Monitorar changelog, versionar node |
+| API Fale Já muda sem aviso | Média | Alto | Monitorar changelog, versionar node |
 | Documentação desatualizada | Alta | Médio | Testar tudo na instância real, verificar Network tab |
 | Rate limiting da API | Baixa | Médio | Implementar retry logic, respeitar headers |
 | Incompatibilidade com versões antigas n8n | Baixa | Baixo | Definir versão mínima clara |
 | Complexidade de manutenção | Média | Alto | Código modular, bem documentado |
 
 ### 8.2 Dependências Críticas
-- Documentação oficial do Chatwoot atualizada
-- Instância Chatwoot funcionando
+- Documentação oficial do Fale Já atualizada
+- Instância Fale Já funcionando
 - Acesso ao n8n para testes
 - npm registry acessível
 
@@ -394,10 +394,10 @@ Requisitos para community node verified:
 ## 10. Referências
 
 ### Documentação Oficial
-- [Chatwoot API Introduction](https://developers.chatwoot.com/api-reference/introduction)
-- [Application APIs](https://developers.chatwoot.com/api-reference/introduction)
-- [Client APIs](https://developers.chatwoot.com/api-reference/introduction)
-- [Platform APIs](https://developers.chatwoot.com/api-reference/introduction)
+- [Fale Já API Introduction](https://developers.faleja.com/api-reference/introduction)
+- [Application APIs](https://developers.faleja.com/api-reference/introduction)
+- [Client APIs](https://developers.faleja.com/api-reference/introduction)
+- [Platform APIs](https://developers.faleja.com/api-reference/introduction)
 
 ### n8n Documentation
 - [Creating Community Nodes](https://docs.n8n.io/integrations/creating-nodes/)
@@ -405,14 +405,14 @@ Requisitos para community node verified:
 - [Code Standards](https://docs.n8n.io/integrations/creating-nodes/build/reference/code-standards/)
 
 ### Projetos Similares (Referência)
-- [sufficit/n8n-nodes-chatwoot](https://github.com/sufficit/n8n-nodes-chatwoot)
-- [pixelinfinito/n8n-nodes-chatwoot](https://github.com/pixelinfinito/n8n-nodes-chatwoot)
+- [sufficit/n8n-nodes-faleja](https://github.com/sufficit/n8n-nodes-faleja)
+- [pixelinfinito/n8n-nodes-faleja](https://github.com/pixelinfinito/n8n-nodes-faleja)
 
 ---
 
 ## 11. Conclusão
 
-Este planejamento estabelece uma base sólida para criar o **mais completo community node do Chatwoot para n8n**. Seguindo a ordem da documentação oficial e priorizando qualidade, escalabilidade e manutenibilidade, o projeto atenderá tanto usuários básicos quanto avançados.
+Este planejamento estabelece uma base sólida para criar o **mais completo community node do Fale Já para n8n**. Seguindo a ordem da documentação oficial e priorizando qualidade, escalabilidade e manutenibilidade, o projeto atenderá tanto usuários básicos quanto avançados.
 
 **Autor**: Yuri Silva  
 **Última Atualização**: Janeiro 2026  

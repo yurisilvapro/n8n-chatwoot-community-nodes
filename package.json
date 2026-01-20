@@ -1,25 +1,35 @@
 {
-  "name": "n8n-nodes-chatwoot-complete",
-  "version": "1.0.1",
-  "description": "Complete Chatwoot integration for n8n - Application, Client and Platform APIs",
+  "name": "n8n-nodes-faleja",
+	"version": "2.3.0",
+  "description": "n8n Community Nodes para Fale Já - Plataforma de Atendimento Moderna - Application API, Client API e Platform API",
   "keywords": [
     "n8n-community-node-package",
     "n8n",
-    "chatwoot",
+    "faleja",
+    "fale-ja",
     "customer-support",
     "chat",
     "messaging",
-    "helpdesk"
+    "helpdesk",
+    "atendimento",
+    "brasil"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/yurisilvapro/chatwoot-community-nodes",
+  "homepage": "https://github.com/yurisilvapro/faleja-community-nodes",
   "author": {
     "name": "Yuri Silva",
-    "email": "yuri@example.com"
+    "email": "yurisilvanegocios.me@gmail.com",
+    "url": "https://taggo.one/yurisistemas"
+  },
+  "contact": {
+    "whatsapp": "+55 21 97208-9450",
+    "instagram": "https://www.instagram.com/yuri.sistemas",
+    "website": "https://taggo.one/yurisistemas",
+    "github": "https://github.com/yurisilvapro"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yurisilvapro/chatwoot-community-nodes.git"
+    "url": "git+https://github.com/yurisilvapro/faleja-community-nodes.git"
   },
   "main": "index.js",
   "scripts": {
@@ -40,7 +50,7 @@
       "dist/credentials/ChatwootPlatformApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Chatwoot/Chatwoot.node.js"
+      "dist/nodes/FaleJa/FaleJa.node.js"
     ]
   },
   "devDependencies": {

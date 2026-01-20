@@ -19,20 +19,35 @@ import { reportOperations, reportFields } from './ApplicationApi/Reports';
 import { clientApiResources, clientApiOperations, clientApiFields } from './ClientApi';
 import { platformApiResources, platformApiOperations, platformApiFields } from './PlatformApi';
 
-export class Chatwoot implements INodeType {
+export class FaleJa implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Chatwoot',
-		name: 'chatwoot',
-		icon: 'file:chatwoot.svg',
+		displayName: 'Fale Já',
+		name: 'faleJa',
+		icon: 'file:faleja.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with Chatwoot API - Application, Client and Platform APIs',
+		description: 'Interaja com a API do Fale Já - Application, Client e Platform APIs',
 		defaults: {
-			name: 'Chatwoot',
+			name: 'Fale Já',
 		},
 		inputs: ['main'],
 		outputs: ['main'],
+		usableAsTool: true,
+		codex: {
+			categories: ['Communication', 'Customer Support'],
+			subcategories: {
+				'Communication': ['Messaging', 'Chat'],
+				'Customer Support': ['Helpdesk', 'Ticketing'],
+			},
+			resources: {
+				primaryDocumentation: [
+					{
+						url: 'https://faleja.com.br',
+					},
+				],
+			},
+		},
 		credentials: [
 			{
 				name: 'chatwootApi',

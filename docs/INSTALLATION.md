@@ -7,7 +7,7 @@
 1. Open your n8n instance
 2. Go to **Settings** → **Community Nodes**
 3. Click **Install**
-4. Enter: `n8n-nodes-chatwoot-complete`
+4. Enter: `n8n-nodes-faleja-complete`
 5. Click **Install**
 6. Restart n8n
 
@@ -17,7 +17,7 @@ If you have access to your n8n installation:
 
 ```bash
 cd ~/.n8n
-npm install n8n-nodes-chatwoot-complete
+npm install n8n-nodes-faleja-complete
 ```
 
 Then restart n8n:
@@ -36,14 +36,14 @@ services:
   n8n:
     image: n8nio/n8n
     environment:
-      - N8N_COMMUNITY_PACKAGES=n8n-nodes-chatwoot-complete
+      - N8N_COMMUNITY_PACKAGES=n8n-nodes-faleja-complete
     # ... other config
 ```
 
 Or install after container is running:
 
 ```bash
-docker exec -it n8n npm install n8n-nodes-chatwoot-complete
+docker exec -it n8n npm install n8n-nodes-faleja-complete
 docker restart n8n
 ```
 
@@ -63,8 +63,8 @@ docker restart n8n
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yurisilva/chatwoot-community-nodes.git
-cd chatwoot-community-nodes
+git clone https://github.com/yurisilva/faleja-community-nodes.git
+cd faleja-community-nodes
 ```
 
 2. **Install dependencies:**
@@ -87,7 +87,7 @@ npm link
 
 # In your n8n directory (usually ~/.n8n)
 cd ~/.n8n
-npm link n8n-nodes-chatwoot-complete
+npm link n8n-nodes-faleja-complete
 ```
 
 5. **Start n8n:**
@@ -96,7 +96,7 @@ npm link n8n-nodes-chatwoot-complete
 n8n start
 ```
 
-The Chatwoot node should now appear in your n8n instance!
+The Fale Já node should now appear in your n8n instance!
 
 ### Development Workflow
 
@@ -142,18 +142,18 @@ npm run format
 ### Project Structure
 
 ```
-chatwoot-community-nodes/
+faleja-community-nodes/
 │
 ├── credentials/
-│   ├── ChatwootApi.credentials.ts
-│   ├── ChatwootClientApi.credentials.ts
-│   └── ChatwootPlatformApi.credentials.ts
+│   ├── Fale JáApi.credentials.ts
+│   ├── Fale JáClientApi.credentials.ts
+│   └── Fale JáPlatformApi.credentials.ts
 │
 ├── nodes/
-│   └── Chatwoot/
-│       ├── Chatwoot.node.ts
+│   └── Fale Já/
+│       ├── Fale Já.node.ts
 │       ├── GenericFunctions.ts
-│       ├── chatwoot.svg
+│       ├── faleja.svg
 │       ├── ApplicationApi/
 │       │   ├── Account/
 │       │   ├── Agents/
@@ -192,16 +192,16 @@ Example: Adding "Labels" resource
 1. **Create the resource directory:**
 
 ```bash
-mkdir nodes/Chatwoot/ApplicationApi/Labels
+mkdir nodes/Fale Já/ApplicationApi/Labels
 ```
 
 2. **Create index.ts:**
 
 ```typescript
-// nodes/Chatwoot/ApplicationApi/Labels/index.ts
+// nodes/Fale Já/ApplicationApi/Labels/index.ts
 import { IExecuteFunctions } from 'n8n-core';
 import { INodePropertyOptions } from 'n8n-workflow';
-import { chatwootApiRequest } from '../../GenericFunctions';
+import { falejaApiRequest } from '../../GenericFunctions';
 
 export const labelOperations: INodePropertyOptions[] = [
   {
@@ -238,7 +238,7 @@ export async function labelExecute(
   operation: string,
 ): Promise<any> {
   if (operation === 'getAll') {
-    return await chatwootApiRequest.call(this, 'GET', 'labels');
+    return await falejaApiRequest.call(this, 'GET', 'labels');
   }
   // Implement other operations...
 }
@@ -247,7 +247,7 @@ export async function labelExecute(
 3. **Import in main node:**
 
 ```typescript
-// nodes/Chatwoot/Chatwoot.node.ts
+// nodes/Fale Já/Fale Já.node.ts
 import { labelOperations, labelFields } from './ApplicationApi/Labels';
 
 // Add to resource options
@@ -281,7 +281,7 @@ npm run build
 #### Manual Testing
 
 1. Create a test workflow in n8n
-2. Add the Chatwoot node
+2. Add the Fale Já node
 3. Configure credentials
 4. Test each operation
 5. Verify responses
@@ -363,7 +363,7 @@ npm run build
 
 ```bash
 npm pack
-# Generates n8n-nodes-chatwoot-complete-0.1.0.tgz
+# Generates n8n-nodes-faleja-complete-0.1.0.tgz
 ```
 
 4. **Login to npm:**
@@ -415,7 +415,7 @@ n8n restart
 **Solution:**
 ```bash
 # Use sudo (not recommended)
-sudo npm install -g n8n-nodes-chatwoot-complete
+sudo npm install -g n8n-nodes-faleja-complete
 
 # OR fix npm permissions (recommended)
 mkdir ~/.npm-global
@@ -450,5 +450,5 @@ npm run build
 
 - **Documentation:** Check `docs/` folder
 - **Examples:** See `examples/` folder
-- **Issues:** [GitHub Issues](https://github.com/yurisilva/chatwoot-community-nodes/issues)
+- **Issues:** [GitHub Issues](https://github.com/yurisilva/faleja-community-nodes/issues)
 - **Email:** yuri@example.com

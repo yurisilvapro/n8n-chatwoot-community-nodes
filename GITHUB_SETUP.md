@@ -15,8 +15,8 @@ Seu repositório Git local está pronto com:
 
 1. Acesse: https://github.com/new
 2. Preencha as informações:
-   - **Repository name**: `chatwoot-community-nodes` ou `n8n-nodes-chatwoot-complete`
-   - **Description**: `Complete Chatwoot integration for n8n - Application, Client and Platform APIs`
+   - **Repository name**: `faleja-community-nodes` ou `n8n-nodes-faleja-complete`
+   - **Description**: `Complete Fale Já integration for n8n - Application, Client and Platform APIs`
    - **Visibility**: ✅ Public (para community nodes)
    - **❌ NÃO** marque "Initialize this repository with"
      - ❌ NÃO adicione README
@@ -84,7 +84,7 @@ cat ~/.ssh/id_ed25519.pub
 
 ```bash
 # 1. Adicionar remote
-git remote add origin https://github.com/SEU_USUARIO/chatwoot-community-nodes.git
+git remote add origin https://github.com/SEU_USUARIO/faleja-community-nodes.git
 
 # 2. Renomear branch
 git branch -M main
@@ -97,7 +97,7 @@ git push -u origin main
 
 ```bash
 # 1. Adicionar remote
-git remote add origin git@github.com:SEU_USUARIO/chatwoot-community-nodes.git
+git remote add origin git@github.com:SEU_USUARIO/faleja-community-nodes.git
 
 # 2. Renomear branch
 git branch -M main
@@ -123,7 +123,7 @@ No GitHub, na página do repositório:
 1. Clique em ⚙️ (Settings) ao lado de "About"
 2. Adicione Topics:
    - `n8n`
-   - `chatwoot`
+   - `faleja`
    - `n8n-nodes`
    - `n8n-community-nodes`
    - `customer-support`
@@ -144,8 +144,8 @@ Para documentação:
 Edite o README.md e adicione no topo (substitua SEU_USUARIO):
 
 ```markdown
-[![GitHub Stars](https://img.shields.io/github/stars/SEU_USUARIO/chatwoot-community-nodes?style=social)](https://github.com/SEU_USUARIO/chatwoot-community-nodes)
-[![npm version](https://badge.fury.io/js/n8n-nodes-chatwoot-complete.svg)](https://www.npmjs.com/package/n8n-nodes-chatwoot-complete)
+[![GitHub Stars](https://img.shields.io/github/stars/SEU_USUARIO/faleja-community-nodes?style=social)](https://github.com/SEU_USUARIO/faleja-community-nodes)
+[![npm version](https://badge.fury.io/js/n8n-nodes-faleja-complete.svg)](https://www.npmjs.com/package/n8n-nodes-faleja-complete)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ```
 
@@ -208,7 +208,7 @@ Certifique-se que o `repository` está correto em `package.json`:
 {
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SEU_USUARIO/chatwoot-community-nodes.git"
+    "url": "git+https://github.com/SEU_USUARIO/faleja-community-nodes.git"
   }
 }
 ```
@@ -269,9 +269,9 @@ No README:
 
 ```markdown
 <div align="center">
-  <img src="assets/logo.png" alt="Chatwoot Community Nodes" width="200"/>
-  <h1>Chatwoot Community Nodes for n8n</h1>
-  <p>Complete Chatwoot integration - Application, Client and Platform APIs</p>
+  <img src="assets/logo.png" alt="Fale Já Community Nodes" width="200"/>
+  <h1>Fale Já Community Nodes for n8n</h1>
+  <p>Complete Fale Já integration - Application, Client and Platform APIs</p>
 </div>
 ```
 

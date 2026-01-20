@@ -22,19 +22,19 @@ export const messageOperations: INodePropertyOptions[] = [
 			{
 				name: 'Create',
 				value: 'create',
-				description: 'Create a new message',
+				description: 'Send a new message in a conversation (outgoing agent message or incoming user message)',
 				action: 'Create a message',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
-				description: 'Delete a message',
+				description: 'Delete a specific message from a conversation by message ID',
 				action: 'Delete a message',
 			},
 			{
 				name: 'Get Many',
 				value: 'getAll',
-				description: 'Get all messages from a conversation',
+				description: 'Get all messages from a conversation with full conversation history',
 				action: 'Get many messages',
 			},
 		],

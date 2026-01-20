@@ -1,4 +1,4 @@
-# Contributing to Chatwoot Community Nodes
+# Contributing to Fale Já Community Nodes
 
 Obrigado por considerar contribuir! Este projeto segue práticas de desenvolvimento profissionais e busca manter alta qualidade em código e documentação.
 
@@ -13,7 +13,7 @@ Se você encontrou um bug:
    - Descrição clara do problema
    - Passos para reproduzir
    - Comportamento esperado vs. comportamento atual
-   - Versões (n8n, Chatwoot, Node.js)
+   - Versões (n8n, Fale Já, Node.js)
    - Workflow JSON (sem dados sensíveis)
 
 ### 2. Sugerir Funcionalidades
@@ -31,8 +31,8 @@ Para novas funcionalidades:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/yurisilva/chatwoot-community-nodes.git
-cd chatwoot-community-nodes
+git clone https://github.com/yurisilva/faleja-community-nodes.git
+cd faleja-community-nodes
 
 # Instale dependências
 npm install
@@ -151,7 +151,7 @@ Embora ainda não tenhamos suite de testes completa, ao contribuir:
 
 ## Recursos Prioritários para Contribuição
 
-Estes recursos da API Chatwoot ainda não estão implementados e são boas oportunidades para contribuir:
+Estes recursos da API Fale Já ainda não estão implementados e são boas oportunidades para contribuir:
 
 ### Application API
 

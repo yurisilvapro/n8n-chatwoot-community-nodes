@@ -7,16 +7,16 @@ import {
 
 export class ChatwootApi implements ICredentialType {
 	name = 'chatwootApi';
-	displayName = 'Chatwoot Application API';
-	documentationUrl = 'https://developers.chatwoot.com/api-reference/introduction';
+	displayName = 'Fale Já Application API';
+	documentationUrl = 'https://faleja.com.br';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'Base URL',
 			name: 'baseUrl',
 			type: 'string',
-			default: 'https://app.chatwoot.com',
-			placeholder: 'https://app.chatwoot.com',
-			description: 'The base URL of your Chatwoot instance',
+			default: 'https://app.faleja.com.br',
+			placeholder: 'https://app.faleja.com.br',
+			description: 'A URL base da sua instância Fale Já',
 			required: true,
 		},
 		{
@@ -27,8 +27,8 @@ export class ChatwootApi implements ICredentialType {
 				password: true,
 			},
 			default: '',
-			placeholder: 'your-access-token',
-			description: 'Access token from Profile Settings → Access Token',
+			placeholder: 'seu-access-token',
+			description: 'Token de acesso obtido em Configurações de Perfil → Access Token',
 			required: true,
 		},
 		{
@@ -37,7 +37,7 @@ export class ChatwootApi implements ICredentialType {
 			type: 'number',
 			default: 1,
 			placeholder: '1',
-			description: 'Your Chatwoot Account ID (usually visible in the URL)',
+			description: 'ID da sua conta Fale Já (geralmente visível na URL)',
 			required: true,
 		},
 	];
@@ -54,8 +54,11 @@ export class ChatwootApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: '={{$credentials.baseUrl}}',
-			url: '/api/v1/accounts/={{$credentials.accountId}}',
+			url: '=/api/v1/accounts/{{$credentials.accountId}}',
 			method: 'GET',
+			headers: {
+				'api_access_token': '={{$credentials.accessToken}}',
+			},
 		},
 	};
 }

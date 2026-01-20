@@ -7,16 +7,16 @@ import {
 
 export class ChatwootPlatformApi implements ICredentialType {
 	name = 'chatwootPlatformApi';
-	displayName = 'Chatwoot Platform API';
-	documentationUrl = 'https://developers.chatwoot.com/api-reference/introduction';
+	displayName = 'Fale Já Platform API';
+	documentationUrl = 'https://faleja.com.br';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'Base URL',
 			name: 'baseUrl',
 			type: 'string',
-			default: '',
-			placeholder: 'https://your-chatwoot-instance.com',
-			description: 'The base URL of your self-hosted Chatwoot instance (Platform APIs only work on self-hosted)',
+			default: 'https://app.faleja.com.br',
+			placeholder: 'https://app.faleja.com.br',
+			description: 'A URL base da sua instância Fale Já (Platform APIs funcionam em instâncias self-hosted)',
 			required: true,
 		},
 		{
@@ -27,8 +27,8 @@ export class ChatwootPlatformApi implements ICredentialType {
 				password: true,
 			},
 			default: '',
-			placeholder: 'your-platform-access-token',
-			description: 'Access token from Super Admin Console → Platform Apps',
+			placeholder: 'seu-platform-access-token',
+			description: 'Token de acesso obtido no Console de Super Admin → Platform Apps',
 			required: true,
 		},
 	];
@@ -47,6 +47,9 @@ export class ChatwootPlatformApi implements ICredentialType {
 			baseURL: '={{$credentials.baseUrl}}',
 			url: '/platform/api/v1/users',
 			method: 'GET',
+			headers: {
+				'api_access_token': '={{$credentials.platformAccessToken}}',
+			},
 		},
 	};
 }

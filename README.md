@@ -1,12 +1,15 @@
-# n8n Community Nodes - Chatwoot Complete Integration
+# n8n Community Nodes - Fale Já
 
-[![GitHub Stars](https://img.shields.io/github/stars/yurisilvapro/chatwoot-community-nodes?style=social)](https://github.com/yurisilvapro/chatwoot-community-nodes)
-[![npm version](https://badge.fury.io/js/n8n-nodes-chatwoot-complete.svg)](https://badge.fury.io/js/n8n-nodes-chatwoot-complete)
+[![GitHub Stars](https://img.shields.io/github/stars/yurisilvapro/faleja-community-nodes?style=social)](https://github.com/yurisilvapro/faleja-community-nodes)
+[![npm version](https://badge.fury.io/js/n8n-nodes-faleja.svg)](https://badge.fury.io/js/n8n-nodes-faleja)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Integração completa e atualizada das APIs do Chatwoot para n8n**
+> **Integração completa com a Plataforma Fale Já para n8n**
 
-Este é o pacote mais completo de community nodes para integrar o Chatwoot com n8n, cobrindo todas as três categorias de APIs: Application, Client e Platform.
+Este é o pacote oficial de community nodes para integrar o **Fale Já** - Plataforma de Atendimento Moderna com n8n, cobrindo todas as três categorias de APIs: Application, Client e Platform.
+
+🔗 **Site Oficial**: [https://faleja.com.br](https://faleja.com.br)  
+🚀 **Plataforma**: [https://app.faleja.com.br](https://app.faleja.com.br)
 
 ## 📋 Índice
 
@@ -25,70 +28,70 @@ Este é o pacote mais completo de community nodes para integrar o Chatwoot com n
 
 ## 🎯 Sobre
 
-Este projeto foi desenvolvido por **Yuri Silva** para fornecer uma integração **completa, robusta e atualizada** entre o Chatwoot e o n8n, seguindo rigorosamente a [documentação oficial do Chatwoot](https://developers.chatwoot.com/api-reference/introduction).
+Este projeto foi desenvolvido por **Yuri Silva** para fornecer uma integração **completa, robusta e atualizada** entre o Fale Já e o n8n.
 
-### Diferencial
+### O que é o Fale Já?
 
-Enquanto outros nodes do Chatwoot cobrem funcionalidades básicas, este pacote oferece:
+**Fale Já** é uma plataforma de atendimento moderna e 100% escalável, desenvolvida para empresas brasileiras que precisam:
 
-✅ **Cobertura Completa**: Todos os 24+ recursos das APIs oficiais  
+✅ **Centralizar** todas as mensagens de redes sociais em um só lugar  
+✅ **Automatizar** atendimentos com chatbots inteligentes  
+✅ **Gerenciar** múltiplos canais: WhatsApp, Instagram, Facebook, Telegram, E-mail, SMS e mais  
+✅ **Acompanhar** relatórios completos de desempenho e satisfação  
+✅ **Integrar** com CRMs, n8n e outras ferramentas via webhooks  
+
+### Diferencial deste Pacote
+
+Enquanto outras integrações cobrem funcionalidades básicas, este pacote oferece:
+
+✅ **Cobertura Completa**: Todos os recursos das APIs oficiais  
 ✅ **3 Tipos de API**: Application, Client e Platform APIs  
-✅ **Sempre Atualizado**: Segue a documentação oficial na ordem correta  
-✅ **Testado**: Validado em instâncias reais Cloud e Self-hosted  
+✅ **100% em Português**: Interface e documentação em português brasileiro  
+✅ **Testado**: Validado na plataforma oficial Fale Já  
 ✅ **Código Limpo**: TypeScript, modular e bem documentado  
-✅ **UX Superior**: Resource Locators, validações e mensagens claras  
+✅ **Suporte Oficial**: Desenvolvido por Yuri Silva, CEO do Fale Já  
 
 ---
 
 ## 🚀 Recursos
 
-### Application APIs (20 recursos)
+### Application APIs
 
 Automação e operações para agentes/administradores:
 
 | Recurso | Operações | Descrição |
 |---------|-----------|-----------|
 | **Account** | Get | Detalhes da conta |
-| **Audit Logs** | Get All | Logs de auditoria |
-| **AgentBots** | Create, Get, Get All, Update, Delete | Gestão de bots |
 | **Agents** | Get All, Create, Update, Delete | Gestão de agentes |
-| **Canned Responses** | Get All, Create, Update, Delete | Respostas prontas |
-| **Custom Attributes** | Get All, Create, Update, Delete | Atributos personalizados |
+| **Canned Responses** | Get All, Create, Delete | Respostas prontas |
 | **Contacts** | Get, Get All, Create, Update, Delete, Search | Gestão completa de contatos |
-| **Contact Labels** | Get All, Add, Remove | Etiquetas de contatos |
-| **Automation Rules** | Get All, Create, Update, Delete | Regras de automação |
-| **Help Center** | Get All, Create, Update, Delete | Central de ajuda/portais |
-| **Conversations** | Get, Get All, Create, Update, Toggle Status | Gestão de conversas |
-| **Conversation Assignments** | Assign, Unassign | Atribuir conversas |
-| **Inboxes** | Get, Get All, Create, Update, Delete | Gestão de caixas de entrada |
-| **Messages** | Get All, Create, Delete, Update | Gestão de mensagens |
-| **Integrations** | Get All, Create, Update, Delete | Gestão de integrações |
-| **Profile** | Get, Update | Perfil do usuário |
-| **Teams** | Get All, Create, Update, Delete | Gestão de equipes |
-| **Custom Filters** | Get All, Create, Update, Delete | Filtros personalizados |
-| **Webhooks** | Get All, Create, Update, Delete | Gestão de webhooks |
-| **Reports** | Get Account, Get Agent, Conversations | Relatórios diversos |
+| **Conversations** | Get, Get All, Create, Toggle Status | Gestão de conversas |
+| **Inboxes** | Get, Get All, Get Agent Bot | Caixas de entrada |
+| **Messages** | Get All, Create, Delete | Mensagens |
+| **Reports** | Account Summary, Agent Summary, Conversations | Relatórios completos |
+| **Teams** | Get, Get All, Create, Update, Delete | Gestão de equipes |
+| **Webhooks** | Get All, Create, Update, Delete | Webhooks para integrações |
 
-### Client APIs (3 recursos)
+### Client APIs
 
-Para construir interfaces de chat customizadas:
+Para interações públicas (chatbot, widget):
 
 | Recurso | Operações | Descrição |
 |---------|-----------|-----------|
-| **Contacts** | Create, Get, Update | Criar e gerenciar contatos via client |
-| **Conversations** | Get All, Create, Get Messages | Conversas do cliente |
+| **Contacts** | Create, Get, Update | Criar e gerenciar contatos públicos |
+| **Conversations** | Get All, Create, Get Messages | Conversas via API pública |
 | **Messages** | Create, Update | Enviar e atualizar mensagens |
 
-### Platform APIs (4 recursos)
+### Platform APIs
 
-Gerenciamento administrativo (apenas self-hosted):
+Para operações de super admin (self-hosted):
 
 | Recurso | Operações | Descrição |
 |---------|-----------|-----------|
 | **Accounts** | Get, Get All, Create, Update, Delete | Gestão de contas |
-| **Account Users** | Get All, Create, Delete | Usuários de conta |
-| **AgentBots** | Get, Get All, Create, Update, Delete | Bots da plataforma |
-| **Users** | Get, Get All, Create, Update, Delete | Gestão de usuários |
+| **Account Users** | Get All, Create, Delete | Usuários da conta |
+| **Agent Bots** | Get, Get All, Create, Update, Delete | Bots de agente |
+| **Users** | Get, Get All, Create, Update, Delete | Usuários da plataforma |
 
 ---
 
@@ -96,349 +99,172 @@ Gerenciamento administrativo (apenas self-hosted):
 
 ### Via n8n Interface (Recomendado)
 
-1. No n8n, vá em **Settings** → **Community Nodes**
-2. Clique em **Install**
-3. Digite: `n8n-nodes-chatwoot-complete`
-4. Clique em **Install**
-5. Reinicie o n8n
+1. Abra seu n8n
+2. Vá em **Settings** → **Community Nodes**
+3. Clique em **Install**
+4. Digite: `n8n-nodes-faleja`
+5. Clique em **Install**
+6. Reinicie o n8n
 
-### Via npm (Manual)
+### Via npm
 
 ```bash
-npm install n8n-nodes-chatwoot-complete
+npm install n8n-nodes-faleja
 ```
 
-Em seguida, reinicie o n8n para carregar os nodes.
+### Via n8n CLI
 
-### Requisitos
-
-- **n8n**: >= 0.200.0
-- **Node.js**: >= 18.x
-- **Chatwoot**: Cloud ou Self-hosted (versões recentes)
+```bash
+n8n-community-nodes add n8n-nodes-faleja
+```
 
 ---
 
 ## 🔐 Autenticação
 
-Este pacote oferece **3 tipos de credenciais** para diferentes casos de uso:
+O Fale Já oferece três tipos de autenticação, dependendo da API que você quer usar:
 
 ### 1. Application API (Mais Comum)
 
-Use para automações de agente/admin.
+Para automações administrativas e operações de agentes.
 
-**Como obter:**
-1. Faça login no Chatwoot
-2. Vá em **Profile Settings** (canto superior direito)
-3. Clique em **Access Token**
-4. Copie o token
+**Onde obter:**
+1. Acesse [https://app.faleja.com.br](https://app.faleja.com.br)
+2. Faça login
+3. Vá em **Perfil** → **Configurações de Perfil**
+4. Copie seu **Access Token**
+5. Copie também o **Account ID** (geralmente visível na URL)
 
 **Configuração no n8n:**
-- **Base URL**: `https://app.chatwoot.com` (ou sua instância)
-- **Access Token**: Cole o token copiado
-- **Account ID**: ID da sua conta (geralmente na URL)
+- **Credential Type**: Fale Já Application API
+- **Base URL**: `https://app.faleja.com.br`
+- **Access Token**: Seu token de acesso
+- **Account ID**: ID da sua conta (número)
 
 ### 2. Client API
 
-Use para interfaces de chat customizadas.
+Para interações públicas via chatbot ou widget.
 
-**Como obter:**
-1. No Chatwoot, vá em **Settings** → **Inboxes**
-2. Selecione uma inbox do tipo **API**
-3. Em **Configuration**, copie o **Inbox Identifier**
-4. Crie um contato via API, receberá o **Contact Identifier**
+**Onde obter:**
+1. Acesse **Configurações** → **Caixas de Entrada**
+2. Selecione uma **API Inbox**
+3. Copie o **Inbox Identifier**
+4. Copie o **Contact Identifier** (obtido ao criar um contato via API)
 
 **Configuração no n8n:**
-- **Base URL**: `https://app.chatwoot.com` (ou sua instância)
-- **Inbox Identifier**: Identificador da inbox
+- **Credential Type**: Fale Já Client API
+- **Base URL**: `https://app.faleja.com.br`
+- **Inbox Identifier**: Identificador da caixa de entrada
 - **Contact Identifier**: Identificador do contato
 
 ### 3. Platform API
 
-Use para gerenciamento administrativo (apenas self-hosted).
+Para operações de super admin (apenas self-hosted).
 
-**Como obter:**
+**Onde obter:**
 1. Acesse o **Super Admin Console**
 2. Vá em **Platform Apps**
-3. Crie um novo Platform App
-4. Copie o **Access Token** gerado
+3. Copie o **Platform Access Token**
 
 **Configuração no n8n:**
+- **Credential Type**: Fale Já Platform API
 - **Base URL**: URL da sua instância self-hosted
-- **Platform Access Token**: Token do Platform App
+- **Platform Access Token**: Token de acesso da plataforma
 
 ---
 
-## 🎨 Recursos Disponíveis
+## 📖 Exemplos de Uso
 
-### Application API - Exemplos
+### Exemplo 1: Criar um Contato
 
-#### Contacts (Contatos)
-
-```javascript
-// Buscar todos os contatos
-Operation: Get All
-Page: 1
-Sort: name
-
-// Criar novo contato
-Operation: Create
-Name: João Silva
-Email: joao@example.com
-Phone: +5511999999999
-
-// Buscar contato específico
-Operation: Get
-Contact ID: 123
-
-// Atualizar contato
-Operation: Update
-Contact ID: 123
-Name: João Silva Jr.
-
-// Deletar contato
-Operation: Delete
-Contact ID: 123
-
-// Buscar contatos
-Operation: Search
-Query: joão
+```json
+{
+  "nodes": [
+    {
+      "name": "Criar Contato Fale Já",
+      "type": "n8n-nodes-faleja.faleJa",
+      "parameters": {
+        "apiType": "application",
+        "resource": "contact",
+        "operation": "create",
+        "name": "João Silva",
+        "email": "joao@exemplo.com.br",
+        "phone": "+5511999999999"
+      },
+      "credentials": {
+        "faleJaApi": "Fale Já Credentials"
+      }
+    }
+  ]
+}
 ```
 
-#### Conversations (Conversas)
+### Exemplo 2: Enviar Mensagem
 
-```javascript
-// Listar conversas
-Operation: Get All
-Status: open
-Inbox ID: 1
-
-// Criar conversa
-Operation: Create
-Contact ID: 123
-Inbox ID: 1
-
-// Buscar conversa específica
-Operation: Get
-Conversation ID: 456
-
-// Alternar status
-Operation: Toggle Status
-Conversation ID: 456
-Status: resolved
+```json
+{
+  "nodes": [
+    {
+      "name": "Enviar Mensagem",
+      "type": "n8n-nodes-faleja.faleJa",
+      "parameters": {
+        "apiType": "application",
+        "resource": "message",
+        "operation": "create",
+        "conversationId": "123",
+        "content": "Olá! Como posso ajudar?",
+        "messageType": "outgoing"
+      },
+      "credentials": {
+        "faleJaApi": "Fale Já Credentials"
+      }
+    }
+  ]
+}
 ```
 
-#### Messages (Mensagens)
+### Exemplo 3: Webhook de Nova Mensagem
 
-```javascript
-// Listar mensagens de uma conversa
-Operation: Get All
-Conversation ID: 456
+Configure um webhook no Fale Já e capture no n8n:
 
-// Criar mensagem
-Operation: Create
-Conversation ID: 456
-Content: Olá! Como posso ajudar?
-Message Type: outgoing
-Private: false
-
-// Criar mensagem com anexo
-Operation: Create
-Conversation ID: 456
-Content: Aqui está o arquivo
-Attachments: [binary data]
-```
-
-#### Webhooks
-
-```javascript
-// Listar webhooks
-Operation: Get All
-Account ID: 1
-
-// Criar webhook
-Operation: Create
-Webhook URL: https://seu-webhook.com/chatwoot
-Events: ["conversation_created", "message_created"]
-HMAC Secret: seu-secret-aqui
-
-// Atualizar webhook
-Operation: Update
-Webhook ID: 789
-Events: ["conversation_created", "message_created", "conversation_resolved"]
-
-// Deletar webhook
-Operation: Delete
-Webhook ID: 789
-```
-
-### Client API - Exemplos
-
-```javascript
-// Criar contato (Client API)
-Resource: Contacts
-Operation: Create
-Name: Maria Santos
-Email: maria@example.com
-Phone: +5511888888888
-
-// Criar conversa
-Resource: Conversations
-Operation: Create
-Contact Identifier: contact_xyz
-
-// Enviar mensagem
-Resource: Messages
-Operation: Create
-Conversation ID: 123
-Content: Olá, preciso de ajuda!
-```
-
-### Platform API - Exemplos
-
-```javascript
-// Criar conta (Platform API)
-Resource: Accounts
-Operation: Create
-Name: Empresa ABC
-Locale: pt_BR
-
-// Criar usuário
-Resource: Users
-Operation: Create
-Name: Admin User
-Email: admin@empresa.com
-Password: senha-segura
-
-// Adicionar usuário à conta
-Resource: Account Users
-Operation: Create
-Account ID: 10
-User ID: 50
-Role: administrator
-```
+1. No Fale Já: **Configurações** → **Integrações** → **Webhooks**
+2. URL do Webhook: Cole a URL do seu n8n webhook
+3. Eventos: Selecione "message_created"
+4. No n8n: Use o node **Webhook** para receber eventos
 
 ---
 
-## 💡 Exemplos de Uso
+## 🐛 Troubleshooting
 
-### Workflow 1: Notificação de Nova Conversa
+### Erro: "Invalid credentials"
+- Verifique se o Access Token está correto
+- Confirme que o Account ID corresponde à sua conta
+- Teste o token diretamente na plataforma Fale Já
 
-```
-Trigger: Chatwoot Webhook (conversation_created)
-↓
-Chatwoot Node: Get Contact (Application API)
-↓
-Slack Node: Send Message
-```
+### Erro: "Resource not found"
+- Verifique se o ID do recurso (contato, conversa, etc.) existe
+- Confirme que você tem permissões para acessar o recurso
 
-### Workflow 2: Resposta Automática
+### Logo não aparece
+- Limpe o cache do navegador (Ctrl + F5)
+- Reinicie completamente o n8n
+- Aguarde alguns segundos para o n8n processar
 
-```
-Trigger: Chatwoot Webhook (message_created)
-↓
-IF Node: message.message_type === 'incoming'
-↓
-OpenAI Node: Generate Response
-↓
-Chatwoot Node: Create Message (Application API)
-```
-
-### Workflow 3: Criar Contato e Iniciar Conversa
-
-```
-Trigger: HTTP Request / Form Submission
-↓
-Chatwoot Node: Create Contact (Application API)
-↓
-Chatwoot Node: Create Conversation (Application API)
-↓
-Chatwoot Node: Create Message (Application API)
-```
-
-### Workflow 4: Relatório Diário
-
-```
-Trigger: Cron (todos os dias 9h)
-↓
-Chatwoot Node: Get Reports - Conversations (Application API)
-↓
-Function Node: Process Data
-↓
-Email Node: Send Report
-```
+### Pacote não instala
+- Verifique sua conexão com a internet
+- Confirme que está usando Node.js 18+
+- Tente instalar via terminal: `npm install n8n-nodes-faleja`
 
 ---
 
-## 🔧 Troubleshooting
-
-### Erro: "401 Unauthorized"
-
-**Causa**: Token inválido ou expirado
-
-**Solução**:
-1. Verifique se o token está correto
-2. Gere um novo token no Chatwoot
-3. Atualize as credenciais no n8n
-
-### Erro: "404 Not Found"
-
-**Causa**: ID de recurso não existe ou URL base incorreta
-
-**Solução**:
-1. Verifique o ID do recurso (contact, conversation, etc.)
-2. Confirme a Base URL nas credenciais
-3. Teste o endpoint via browser/Postman
-
-### Erro: "401 Non permissible resource" (Platform API)
-
-**Causa**: Platform App não tem permissão para acessar o recurso
-
-**Solução**:
-1. Acesse o Rails console da sua instância
-2. Execute:
-```ruby
-PlatformAppPermissible.create!(
-  platform_app: PlatformApp.find(1), 
-  permissible: Account.find(1)
-)
-```
-
-### Erro: "422 Unprocessable Entity"
-
-**Causa**: Dados inválidos na requisição
-
-**Solução**:
-1. Verifique os campos obrigatórios
-2. Valide o formato dos dados (email, phone, etc.)
-3. Consulte a documentação oficial
-
-### Paginação não funciona
-
-**Solução**:
-- Use o parâmetro `page` com números >= 1
-- Verifique o campo `meta` na resposta para info de páginas
-
-### Documentação desatualizada
-
-Se encontrar discrepâncias entre a documentação e o comportamento real:
-
-1. Abra o **DevTools** do browser (F12)
-2. Vá na aba **Network**
-3. Execute a operação no Chatwoot UI
-4. Veja o request real (payload, headers, URL)
-5. Replique no n8n
-6. [Abra uma issue](https://github.com/yurisilva/chatwoot-community-nodes/issues) para atualizarmos
-
----
-
-## 👨‍💻 Desenvolvimento
+## 💻 Desenvolvimento
 
 ### Setup Local
 
 ```bash
 # Clone o repositório
-git clone https://github.com/yurisilva/chatwoot-community-nodes.git
-cd chatwoot-community-nodes
+git clone https://github.com/yurisilvapro/faleja-community-nodes.git
+cd faleja-community-nodes
 
 # Instale dependências
 npm install
@@ -448,97 +274,41 @@ npm run build
 
 # Link localmente
 npm link
-
-# No diretório do n8n
-npm link n8n-nodes-chatwoot-complete
+cd ~/.n8n/nodes
+npm link n8n-nodes-faleja
 ```
 
-### Estrutura do Código
+### Estrutura do Projeto
 
 ```
-nodes/Chatwoot/
-├── Chatwoot.node.ts              # Node principal
-├── GenericFunctions.ts           # Helpers HTTP
-├── ApplicationApi/               # Application APIs
-│   ├── Contacts/
-│   │   └── index.ts
-│   ├── Conversations/
-│   └── ...
-├── ClientApi/                    # Client APIs
-└── PlatformApi/                  # Platform APIs
-```
-
-### Comandos Úteis
-
-```bash
-npm run lint          # Verificar código
-npm run format        # Formatar código
-npm run build         # Compilar TypeScript
-npm run dev           # Watch mode
+n8n-nodes-faleja/
+├── credentials/
+│   ├── FaleJaApi.credentials.ts
+│   ├── FaleJaClientApi.credentials.ts
+│   └── FaleJaPlatformApi.credentials.ts
+├── nodes/
+│   └── FaleJa/
+│       ├── FaleJa.node.ts
+│       ├── ApplicationApi/
+│       ├── ClientApi/
+│       ├── PlatformApi/
+│       └── GenericFunctions.ts
+├── docs/
+├── examples/
+└── package.json
 ```
 
 ---
 
 ## 🤝 Contribuindo
 
-Contribuições são muito bem-vindas! 
-
-### Como Contribuir
+Contribuições são bem-vindas! Por favor:
 
 1. Fork o projeto
-2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
 5. Abra um Pull Request
-
-### Diretrizes
-
-- Siga os padrões de código TypeScript
-- Mantenha arquivos com max 200-300 linhas
-- Adicione testes para novas funcionalidades
-- Atualize a documentação
-- Escreva commits claros e objetivos
-
----
-
-## 📚 Referências
-
-### Documentação Oficial
-
-- [Chatwoot API Reference](https://developers.chatwoot.com/api-reference/introduction)
-- [n8n Creating Nodes](https://docs.n8n.io/integrations/creating-nodes/)
-- [n8n Community Nodes](https://docs.n8n.io/integrations/community-nodes/)
-
-### Links Úteis
-
-- [Chatwoot GitHub](https://github.com/chatwoot/chatwoot)
-- [n8n GitHub](https://github.com/n8n-io/n8n)
-- [Chatwoot Community](https://chatwoot.com/community)
-
----
-
-## 📄 Licença
-
-MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
----
-
-## 👤 Autor
-
-**Yuri Silva**
-
-- GitHub: [@yurisilva](https://github.com/yurisilva)
-- Email: yuri@example.com
-
----
-
-## 🙏 Agradecimentos
-
-- Equipe Chatwoot pela excelente API e documentação
-- Comunidade n8n pelo suporte e ferramentas
-- Projetos existentes que serviram de inspiração:
-  - [sufficit/n8n-nodes-chatwoot](https://github.com/sufficit/n8n-nodes-chatwoot)
-  - [pixelinfinito/n8n-nodes-chatwoot](https://github.com/pixelinfinito/n8n-nodes-chatwoot)
 
 ---
 
@@ -548,46 +318,67 @@ MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 | API Type | Recursos | Status |
 |----------|----------|--------|
-| Application APIs | 10/20 | ✅ Versão 1.0.0 |
-| Client APIs | 3/3 | ✅ Versão 1.0.0 |
-| Platform APIs | 4/4 | ✅ Versão 1.0.0 |
-
-### Roadmap
-
-- [x] Planejamento e arquitetura
-- [x] Fase 1: Setup e credenciais
-- [x] Fase 2: Application APIs - Core
-- [x] Fase 5: Client APIs
-- [x] Fase 6: Platform APIs
-- [x] Fase 7: Qualidade e documentação
-- [x] Fase 8: Publicação no npm ✅
-- [ ] Fase 3: Application APIs - Complementares (próxima versão)
-- [ ] Fase 4: Application APIs - Avançadas (próxima versão)
+| Application APIs | 10/20 | ✅ Versão 2.0.0 |
+| Client APIs | 3/3 | ✅ Versão 2.0.0 |
+| Platform APIs | 4/4 | ✅ Versão 2.0.0 |
 
 ---
 
 ## 🔄 Changelog
 
-### [1.0.0] - 2026-01-19
-- ✅ Primeira versão estável publicada
+### [2.0.0] - 2026-01-19
+- 🎨 **BREAKING CHANGE**: Renomeado de Chatwoot para Fale Já
+- ✅ Integração completa com plataforma Fale Já
 - ✅ 10 recursos da Application API
 - ✅ 3 recursos da Client API
 - ✅ 4 recursos da Platform API
-- ✅ Logo/ícone otimizado
-- ✅ Documentação completa
+- ✅ Logo oficial do Fale Já
+- ✅ Documentação 100% em português
 - ✅ Publicado no npm
-
-### [0.1.0-beta.1] - 2026-01-19
-- Versão beta inicial
-- Estrutura do projeto
-- Documentação base
 
 ---
 
-<div align="center">
+## 📜 Licença
 
-**Feito com ❤️ por Yuri Silva**
+MIT © 2026 Yuri Silva
 
-Se este projeto te ajudou, considere dar uma ⭐!
+---
 
-</div>
+## 👤 Autor
+
+**Yuri Silva**  
+Desenvolvedor & CEO do Fale Já  
+_Empresário Tecnologia na Saúde | Segurança da Informação | Inteligência Artificial_
+
+### 📬 Contato
+
+- 🌐 **Website**: [https://taggo.one/yurisistemas](https://taggo.one/yurisistemas)
+- 📧 **Email**: yurisilvanegocios.me@gmail.com
+- 💬 **WhatsApp**: [+55 21 97208-9450](https://wa.me/5521972089450)
+- 📸 **Instagram**: [@yuri.sistemas](https://www.instagram.com/yuri.sistemas)
+- 💼 **GitHub**: [@yurisilvapro](https://github.com/yurisilvapro)
+- 🚀 **Fale Já**: [https://faleja.com.br](https://faleja.com.br)
+
+---
+
+## 🙏 Agradecimentos
+
+- Equipe n8n pela plataforma incrível
+- Comunidade n8n Brasil
+- Usuários do Fale Já
+
+---
+
+## 🔗 Links Úteis
+
+- 📦 [npm Package](https://www.npmjs.com/package/n8n-nodes-faleja)
+- 🐙 [GitHub Repository](https://github.com/yurisilvapro/faleja-community-nodes)
+- 🌐 [Fale Já - Site Oficial](https://faleja.com.br)
+- 🚀 [Fale Já - Plataforma](https://app.faleja.com.br)
+- 📚 [n8n Documentation](https://docs.n8n.io)
+
+---
+
+<p align="center">
+  Desenvolvido com ❤️ por <strong>Yuri Silva</strong> para a comunidade brasileira
+</p>

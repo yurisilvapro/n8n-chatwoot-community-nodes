@@ -1,13 +1,13 @@
 # Troubleshooting Guide
 
-Common issues and solutions when using the Chatwoot n8n nodes.
+Common issues and solutions when using the Fale Já n8n nodes.
 
 ## Installation Issues
 
 ### Node Not Appearing in n8n
 
 **Symptoms:**
-- After installation, the Chatwoot node doesn't appear in the node list
+- After installation, the Fale Já node doesn't appear in the node list
 
 **Solutions:**
 
@@ -23,10 +23,10 @@ Common issues and solutions when using the Chatwoot n8n nodes.
 
 2. **Verify Installation:**
    ```bash
-   npm list | grep chatwoot
+   npm list | grep faleja
    ```
    
-   You should see: `n8n-nodes-chatwoot-complete@X.X.X`
+   You should see: `n8n-nodes-faleja-complete@X.X.X`
 
 3. **Check n8n Version:**
    - Ensure you're running n8n >= 0.200.0
@@ -54,7 +54,7 @@ Common issues and solutions when using the Chatwoot n8n nodes.
 **Causes & Solutions:**
 
 1. **Invalid Token:**
-   - Go to Chatwoot → Profile Settings → Access Token
+   - Go to Fale Já → Profile Settings → Access Token
    - Generate a new token
    - Update credentials in n8n
 
@@ -116,7 +116,7 @@ PlatformAppPermissible.create!(
 
 ## Connection Errors
 
-### Cannot Connect to Chatwoot
+### Cannot Connect to Fale Já
 
 **Symptoms:**
 - Timeout errors
@@ -125,16 +125,16 @@ PlatformAppPermissible.create!(
 **Solutions:**
 
 1. **Check Base URL:**
-   - ✅ Correct: `https://app.chatwoot.com`
-   - ❌ Wrong: `https://app.chatwoot.com/`
-   - ❌ Wrong: `https://app.chatwoot.com/api/v1`
+   - ✅ Correct: `https://app.faleja.com`
+   - ❌ Wrong: `https://app.faleja.com/`
+   - ❌ Wrong: `https://app.faleja.com/api/v1`
 
 2. **Self-Hosted Behind Firewall:**
-   - Ensure n8n can reach your Chatwoot instance
+   - Ensure n8n can reach your Fale Já instance
    - Check firewall rules
    - Test with curl:
      ```bash
-     curl https://your-chatwoot.com/api
+     curl https://your-faleja.com/api
      ```
 
 3. **SSL Certificate Issues:**
@@ -158,7 +158,7 @@ PlatformAppPermissible.create!(
    - Contact IDs are numbers, not strings
 
 2. **Contact Was Deleted:**
-   - Check in Chatwoot UI if contact exists
+   - Check in Fale Já UI if contact exists
    - Recreate if necessary
 
 ### Conversation Not Found (404)
@@ -218,7 +218,7 @@ PlatformAppPermissible.create!(
 ### Webhooks Not Triggering
 
 **Symptoms:**
-- Created webhook in Chatwoot
+- Created webhook in Fale Já
 - n8n workflow not triggered
 
 **Solutions:**
@@ -228,7 +228,7 @@ PlatformAppPermissible.create!(
    - HTTPS recommended
    - Test with curl:
      ```bash
-     curl -X POST https://your-n8n.com/webhook/chatwoot \
+     curl -X POST https://your-n8n.com/webhook/faleja \
        -H "Content-Type: application/json" \
        -d '{"test": "data"}'
      ```
@@ -242,10 +242,10 @@ PlatformAppPermissible.create!(
 
 3. **Check n8n Webhook Node:**
    - Path must match the webhook URL
-   - Example: If URL is `https://n8n.com/webhook/chatwoot`, path is `chatwoot`
+   - Example: If URL is `https://n8n.com/webhook/faleja`, path is `faleja`
 
 4. **Firewall Issues:**
-   - Chatwoot must be able to reach n8n
+   - Fale Já must be able to reach n8n
    - Check firewall/security groups
 
 ### Webhook Validation Failed
@@ -261,7 +261,7 @@ If using HMAC validation:
 ```javascript
 // In n8n Code node
 const crypto = require('crypto');
-const signature = $json.headers['x-chatwoot-hmac-signature'];
+const signature = $json.headers['x-faleja-hmac-signature'];
 const payload = JSON.stringify($json.body);
 const secret = 'YOUR_WEBHOOK_SECRET';
 
@@ -341,10 +341,10 @@ if (signature !== expectedSignature) {
    - Example: Filter conversations by status, inbox, etc.
 
 3. **Rate Limiting:**
-   - Chatwoot may have rate limits
+   - Fale Já may have rate limits
    - Add delays between bulk operations:
      ```
-     Loop Items → Wait → Chatwoot Operation
+     Loop Items → Wait → Fale Já Operation
      ```
 
 ---
@@ -401,20 +401,20 @@ if (signature !== expectedSignature) {
 If you're still experiencing issues:
 
 1. **Check Documentation:**
-   - [Chatwoot API Docs](https://developers.chatwoot.com/api-reference/introduction)
+   - [Fale Já API Docs](https://developers.faleja.com/api-reference/introduction)
    - [n8n Documentation](https://docs.n8n.io)
 
 2. **Search Existing Issues:**
-   - [GitHub Issues](https://github.com/yurisilva/chatwoot-community-nodes/issues)
+   - [GitHub Issues](https://github.com/yurisilva/faleja-community-nodes/issues)
 
 3. **Open a New Issue:**
    - Include n8n version
-   - Include Chatwoot version (if self-hosted)
+   - Include Fale Já version (if self-hosted)
    - Include error messages
    - Include workflow JSON (remove sensitive data)
 
 4. **Community Support:**
-   - [Chatwoot Community](https://chatwoot.com/community)
+   - [Fale Já Community](https://faleja.com/community)
    - [n8n Community Forum](https://community.n8n.io)
 
 ---
@@ -424,7 +424,7 @@ If you're still experiencing issues:
 Enable debug mode to see detailed API requests:
 
 1. **In n8n workflow:**
-   - Add a Code node after Chatwoot node
+   - Add a Code node after Fale Já node
    - Use:
      ```javascript
      console.log(JSON.stringify($input.all(), null, 2));
@@ -441,7 +441,7 @@ Enable debug mode to see detailed API requests:
    ```
 
 3. **Use Browser DevTools:**
-   - Open Chatwoot in browser
+   - Open Fale Já in browser
    - Open DevTools (F12)
    - Go to Network tab
    - Perform the action

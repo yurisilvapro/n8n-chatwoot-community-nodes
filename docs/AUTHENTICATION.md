@@ -1,6 +1,6 @@
 # Authentication Guide
 
-This document provides detailed instructions on how to authenticate with each type of Chatwoot API.
+This document provides detailed instructions on how to authenticate with each type of Fale Já API.
 
 ## Application API
 
@@ -8,7 +8,7 @@ The Application API is the most common type and is used for agent/admin operatio
 
 ### How to Get Your Access Token
 
-1. **Log in** to your Chatwoot account
+1. **Log in** to your Fale Já account
 2. Click on your **profile picture** in the bottom left corner
 3. Go to **Profile Settings**
 4. Scroll down to **Access Token** section
@@ -19,18 +19,18 @@ The Application API is the most common type and is used for agent/admin operatio
 Your Account ID is visible in the URL when you're logged in:
 
 ```
-https://app.chatwoot.com/app/accounts/[ACCOUNT_ID]/dashboard
+https://app.faleja.com/app/accounts/[ACCOUNT_ID]/dashboard
 ```
 
 The number in place of `[ACCOUNT_ID]` is your Account ID.
 
 ### Setting Up in n8n
 
-1. In n8n, add a new **Chatwoot** node
+1. In n8n, add a new **Fale Já** node
 2. Select **Application API** as the API Type
 3. Click on **Create New Credentials**
 4. Fill in:
-   - **Base URL**: `https://app.chatwoot.com` (or your self-hosted URL)
+   - **Base URL**: `https://app.faleja.com` (or your self-hosted URL)
    - **Access Token**: Paste the token you copied
    - **Account ID**: Enter your Account ID (number only)
 5. Click **Create**
@@ -44,7 +44,7 @@ The Client API is used for building custom chat interfaces for end-users.
 
 ### Prerequisites
 
-You need an **API Inbox** in Chatwoot. If you don't have one:
+You need an **API Inbox** in Fale Já. If you don't have one:
 
 1. Go to **Settings** → **Inboxes**
 2. Click **Add Inbox**
@@ -76,11 +76,11 @@ The response will include a `contact_identifier` field. Save this for future req
 
 ### Setting Up in n8n
 
-1. In n8n, add a new **Chatwoot** node
+1. In n8n, add a new **Fale Já** node
 2. Select **Client API** as the API Type
 3. Click on **Create New Credentials**
 4. Fill in:
-   - **Base URL**: `https://app.chatwoot.com` (or your self-hosted URL)
+   - **Base URL**: `https://app.faleja.com` (or your self-hosted URL)
    - **Inbox Identifier**: Paste the inbox identifier
    - **Contact Identifier**: Paste the contact identifier
 5. Click **Create**
@@ -95,7 +95,7 @@ The Platform API is used for administrative operations at scale. **Only works on
 
 ### Prerequisites
 
-- You must have a **self-hosted** Chatwoot installation
+- You must have a **self-hosted** Fale Já installation
 - You must have access to the **Super Admin Console**
 
 ### How to Get Your Platform Access Token
@@ -110,11 +110,11 @@ The Platform API is used for administrative operations at scale. **Only works on
 
 ### Setting Up in n8n
 
-1. In n8n, add a new **Chatwoot** node
+1. In n8n, add a new **Fale Já** node
 2. Select **Platform API** as the API Type
 3. Click on **Create New Credentials**
 4. Fill in:
-   - **Base URL**: Your self-hosted Chatwoot URL (e.g., `https://chatwoot.yourcompany.com`)
+   - **Base URL**: Your self-hosted Fale Já URL (e.g., `https://faleja.yourcompany.com`)
    - **Platform Access Token**: Paste the token you copied
 5. Click **Create**
 6. Click **Test** to verify the connection
@@ -122,7 +122,7 @@ The Platform API is used for administrative operations at scale. **Only works on
 ### Important Notes
 
 - Platform APIs can **only access** accounts, users, and objects created by the specific Platform App (or explicitly permitted)
-- They **cannot access** accounts/users created via the Chatwoot UI or by other API keys
+- They **cannot access** accounts/users created via the Fale Já UI or by other API keys
 - To grant access to existing accounts, run this in Rails console:
 
 ```ruby
@@ -141,7 +141,7 @@ PlatformAppPermissible.create!(
 Try fetching your account details:
 
 ```
-GET https://app.chatwoot.com/api/v1/accounts/{account_id}
+GET https://app.faleja.com/api/v1/accounts/{account_id}
 Headers:
   api_access_token: YOUR_TOKEN
 ```
@@ -151,7 +151,7 @@ Headers:
 Try fetching contact details:
 
 ```
-GET https://app.chatwoot.com/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}
+GET https://app.faleja.com/public/api/v1/inboxes/{inbox_identifier}/contacts/{contact_identifier}
 ```
 
 ### Platform API Test
@@ -159,7 +159,7 @@ GET https://app.chatwoot.com/public/api/v1/inboxes/{inbox_identifier}/contacts/{
 Try listing users:
 
 ```
-GET https://your-chatwoot.com/platform/api/v1/users
+GET https://your-faleja.com/platform/api/v1/users
 Headers:
   api_access_token: YOUR_PLATFORM_TOKEN
 ```
@@ -188,8 +188,8 @@ The Platform App doesn't have permission to access the resource. Grant permissio
 
 **Do NOT** include a trailing slash in the Base URL:
 
-✅ Correct: `https://app.chatwoot.com`  
-❌ Wrong: `https://app.chatwoot.com/`
+✅ Correct: `https://app.faleja.com`  
+❌ Wrong: `https://app.faleja.com/`
 
 ---
 
@@ -206,6 +206,6 @@ The Platform App doesn't have permission to access the resource. Grant permissio
 
 ## Need Help?
 
-- [Chatwoot API Documentation](https://developers.chatwoot.com/api-reference/introduction)
-- [Chatwoot Community](https://chatwoot.com/community)
-- [GitHub Issues](https://github.com/yurisilva/chatwoot-community-nodes/issues)
+- [Fale Já API Documentation](https://developers.faleja.com/api-reference/introduction)
+- [Fale Já Community](https://faleja.com/community)
+- [GitHub Issues](https://github.com/yurisilva/faleja-community-nodes/issues)

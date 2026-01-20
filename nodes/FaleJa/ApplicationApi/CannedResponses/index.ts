@@ -22,19 +22,19 @@ export const cannedResponseOperations: INodePropertyOptions[] = [
 			{
 				name: 'Create',
 				value: 'create',
-				description: 'Create a new canned response',
+				description: 'Create a new canned response template with a short code and pre-written message content',
 				action: 'Create a canned response',
 			},
 			{
 				name: 'Delete',
 				value: 'delete',
-				description: 'Delete a canned response',
+				description: 'Permanently delete a canned response template by ID',
 				action: 'Delete a canned response',
 			},
 			{
 				name: 'Get Many',
 				value: 'getAll',
-				description: 'Get all canned responses',
+				description: 'Get list of all saved canned response templates with their short codes and content',
 				action: 'Get many canned responses',
 			},
 		],

@@ -18,19 +18,19 @@ export const reportOperations: INodePropertyOptions[] = [
 			{
 				name: 'Get Account Summary',
 				value: 'getAccountSummary',
-				description: 'Get account summary report',
+				description: 'Get account-wide analytics report with metrics like conversation count, response time, resolution time by date range',
 				action: 'Get account summary report',
 			},
 			{
 				name: 'Get Agent Summary',
 				value: 'getAgentSummary',
-				description: 'Get agent summary report',
+				description: 'Get performance metrics for a specific agent or all agents including conversations handled and response times',
 				action: 'Get agent summary report',
 			},
 			{
 				name: 'Get Conversations',
 				value: 'getConversations',
-				description: 'Get conversations report',
+				description: 'Get detailed conversation analytics and metrics filtered by date range, inbox, team or label',
 				action: 'Get conversations report',
 			},
 		],

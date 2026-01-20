@@ -22,19 +22,19 @@ export const inboxOperations: INodePropertyOptions[] = [
 			{
 				name: 'Get',
 				value: 'get',
-				description: 'Get an inbox',
+				description: 'Get detailed information about a specific inbox including name, channel type, settings and status',
 				action: 'Get an inbox',
 			},
 			{
 				name: 'Get Many',
 				value: 'getAll',
-				description: 'Get all inboxes',
+				description: 'Get list of all inboxes configured in the account with their channels and settings',
 				action: 'Get many inboxes',
 			},
 			{
 				name: 'Get Agent Bot',
 				value: 'getAgentBot',
-				description: 'Get agent bot of an inbox',
+				description: 'Get the agent bot configuration and settings assigned to a specific inbox',
 				action: 'Get agent bot of inbox',
 			},
 		],
